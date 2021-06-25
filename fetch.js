@@ -4,40 +4,55 @@
 
 /* fetch("https://jsonplaceholder.typicode.com/comments/1")
   .then((response) => response.json())
-  .then((data) => console.log(data)); */
+  .then((data) => console.log(data));
 
-/* const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 fetch("https://jsonplaceholder.typicode.com/comments/1")
   .then((response) => response.json())
-  .then((data) => console.log(result)); */
+  .then((data) => console.log(result));
+ */
 
+var urlencoded = new URLSearchParams();
+urlencoded.append("geoloc", "123,123");
+urlencoded.append("status", "ACTIVE");
+urlencoded.append("label", "entrance");
 
-  
-/*   ASYNC & AWAIT */
+var requestOptions = {
+  method: "GET",
+  body: urlencoded,
+  redirect: "follow",
+};
 
-import fetch from "node-fetch";
-const photos = [];
+fetch("https://ws-staging.staysafe.ph/api/v1/integrator/qr", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.log("error", error));
 
-async function photoUpload() {
-  let uploadStatus = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      photos.push("picture");
-      resolve("Photo uploaded");
-    }, 3000);
-  });
+// /*   ASYNC & AWAIT */
 
-  let result = await uploadStatus;
-  console.log(result);
-  console.log(photos.length);
-}
+// import fetch from "node-fetch";
+// const photos = [];
 
-photoUpload();
+// async function photoUpload() {
+//   let uploadStatus = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       photos.push("picture");
+//       resolve("Photo uploaded");
+//     }, 3000);
+//   });
 
-/* challenge 2 */
+//   let result = await uploadStatus;
+//   console.log(result);
+//   console.log(photos.length);
+// }
 
-/* async function randomJoke() {
-  let response = await fetch("https://api.chucknorris.io/jokes/random");
-  let data = await response.json();
-  console.log(data.value);
-}
-randomJoke(); */
+// photoUpload();
+
+// /* challenge 2 */
+
+// /* async function randomJoke() {
+//   let response = await fetch("https://api.chucknorris.io/jokes/random");
+//   let data = await response.json();
+//   console.log(data.value);
+// }
+// randomJoke(); */
