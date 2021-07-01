@@ -2,15 +2,14 @@
 // 1. install node-fetch npm install
 // 2. add package.json
 
-/* fetch("https://jsonplaceholder.typicode.com/comments/1")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// fetch("https://jsonplaceholder.typicode.com/comments/1")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
 
-const fetch = require("node-fetch");
-fetch("https://jsonplaceholder.typicode.com/comments/1")
-  .then((response) => response.json())
-  .then((data) => console.log(result));
- */
+// const fetch = require("node-fetch");
+// fetch("https://jsonplaceholder.typicode.com/comments/1")
+//   .then((response) => response.json())
+//   .then((data) => console.log(result));
 
 var urlencoded = new URLSearchParams();
 urlencoded.append("geoloc", "123,123");
